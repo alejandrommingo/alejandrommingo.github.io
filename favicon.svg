@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#173033"/><path d="M12 49 30 12 42 49M20 36H36" fill="none" stroke="#f7f6f2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="17" r="6" fill="#b66b51"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">Subespacio y proyección ortogonal</title>
+<rect width="64" height="64" rx="13" fill="#173033"/>
+<path d="M7.5 40.5 28 29 57 40.5 36.5 52Z" fill="#39746d" fill-opacity=".43" stroke="#89b8ab" stroke-width="1.7" stroke-linejoin="round"/>
+<path d="M21.5 42 40.5 43.5" stroke="#e9f3ea" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M40.5 16.5V43.5" stroke="#b2c9c0" stroke-width="1.7" stroke-dasharray="2.8 3.4"/>
+<path d="M21.5 42 40.5 16.5" fill="none" stroke="#d68e72" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M34 19.9 40.5 16.5 40 24.1" fill="none" stroke="#d68e72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="40.5" cy="43.5" r="3.3" fill="#e9f3ea"/>
+</svg>
