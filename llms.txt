@@ -27,5 +27,9 @@ Main research areas: cognitive psychology, computational models of semantic repr
 - [Selected publications at UNED](https://portalcientifico.uned.es/investigadores/1200696/publicaciones)
 - [Canal UNED, cognitive biases lecture (2024)](https://canal.uned.es/video/672c6c0b83ed451c5a075e76)
 - [Santalucía Impulsa interview (2017)](https://www.santaluciaimpulsa.es/blog/entrevistamos-a-los-emprendedores-de-la-startup-wibber)
+- [El Referente: Wibber founders interview (11 April 2017)](https://elreferente.es/entrevistas/para-construir-una-sociedad-mas-amable-las-empresas-deberian-seguir-la-filosofia-people-first/)
+- [actúaUPM: Wibber in the 2017 Demo Day programme](https://actuaupm.blogspot.com/2017/05/21-junio-demo-day-actuaupm-2017.html)
+- [Doctoral thesis: Dialnet record (UAM, 2024)](https://dialnet.unirioja.es/servlet/tesis?codigo=329016)
+- [Doctoral thesis: open-access full text at UAM](https://repositorio.uam.es/bitstreams/eda53f6e-414b-4671-93dd-dcb6bda9d15c/download)
 
 This is a directory of existing public information, not a comprehensive CV. For author and publication details, consult original sources.
