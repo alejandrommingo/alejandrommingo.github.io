@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<title>Alejandro Martínez-Mingo — Psicología cognitiva y modelos del lenguaje</title>
+<defs>
+<radialGradient id="background" cx="83%" cy="47%" r="96%">
+<stop offset="0%" stop-color="#1c4140"/>
+<stop offset="100%" stop-color="#122b2c"/>
+</radialGradient>
+<clipPath id="surface"><path d="M790 409L975 475 1125 401 940 335Z"/></clipPath>
+</defs>
+<rect width="1200" height="630" fill="url(#background)"/>
+<path d="M82 77H1115M82 549H1115" stroke="#80aaa0" stroke-opacity=".22" stroke-width="2"/>
+<rect x="767" y="92" width="364" height="421" rx="60" fill="#39746d" fill-opacity=".13" stroke="#80aaa0" stroke-opacity=".3" stroke-width="2"/>
+<path d="M790 409L975 475 1125 401 940 335Z" fill="#398d85" fill-opacity=".43" stroke="#7dcbbb" stroke-opacity=".76" stroke-width="3"/>
+<g clip-path="url(#surface)" stroke="#9bd8c8" stroke-opacity=".18" stroke-width="2">
+<path d="M817 396L1002 462 M851 381L1036 447 M884 365L1069 431 M918 350L1103 416"/>
+<path d="M829 423L979 349 M873 439L1023 365 M916 455L1066 381 M958 470L1108 396"/>
+</g>
+<path d="M860 416L997 426" fill="none" stroke="#d5f4ea" stroke-width="9" stroke-linecap="round"/>
+<path d="M860 416L997 260" fill="none" stroke="#e39070" stroke-width="9" stroke-linecap="round"/>
+<path d="M982 266L997 260 994 274" fill="none" stroke="#e39070" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M997 276V417" fill="none" stroke="#afcbc0" stroke-width="3" stroke-dasharray="9 11"/>
+<circle cx="860" cy="416" r="6" fill="#edf4ea"/>
+<circle cx="997" cy="426" r="8" fill="#e3f8eb"/>
+<circle cx="997" cy="260" r="9" fill="#e9967a"/>
+<g font-family="Lato, DejaVu Sans, sans-serif">
+<text x="88" y="132" fill="#aac8ba" font-size="20" font-weight="600" letter-spacing="1.5">PSICOLOGÍA · COGNICIÓN · COMPUTACIÓN</text>
+<text x="85" y="285" fill="#faf8f0" font-size="67" font-weight="800">Alejandro</text>
+<text x="85" y="360" fill="#faf8f0" font-size="67" font-weight="800">Martínez-Mingo</text>
+<text x="88" y="440" fill="#d4e3db" font-size="27" font-weight="500">Psicología cognitiva y modelos del lenguaje</text>
+<text x="88" y="478" fill="#aac6ba" font-size="20">Investigación · Docencia · Metodología</text>
+<text x="89" y="580" fill="#d2e4d8" font-size="21">UNED · Facultad de Psicología</text>
+<text x="899" y="580" fill="#aac6ba" font-size="17">alejandrommingo.github.io</text>
+<text x="1004" y="235" fill="#eab49d" font-size="24">x</text>
+<text x="1004" y="466" fill="#d6f1e5" font-size="24">P<tspan baseline-shift="sub" font-size="16">S</tspan>x</text>
+<text x="803" y="470" fill="#a9ccbd" font-size="24">S</text>
+</g>
+</svg>
