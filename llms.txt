@@ -1,0 +1,34 @@
+# Alejandro Martínez-Mingo — academic website
+
+Official personal academic website of Alejandro Martínez-Mingo, Profesor Ayudante Doctor at Universidad Nacional de Educación a Distancia (UNED), Faculty of Psychology, Department of Behavioral Sciences Methodology.
+
+Research: cognitive psychology; language and conceptual representation; computational models of cognition; semantic subspaces and geometry; quantum-inspired cognitive models; language models and construct validity; behavioral science methodology.
+
+## Pages
+- [Spanish homepage](https://alejandrommingo.github.io/)
+- [English homepage](https://alejandrommingo.github.io/en/)
+- [Research and code](https://alejandrommingo.github.io/investigacion/)
+- [Research (English)](https://alejandrommingo.github.io/en/research/)
+- [Teaching and UNED course guides](https://alejandrommingo.github.io/docencia/)
+- [Teaching (English)](https://alejandrommingo.github.io/en/teaching/)
+- [Talks and interviews](https://alejandrommingo.github.io/divulgacion/)
+- [Talks and interviews (English)](https://alejandrommingo.github.io/en/talks/)
+
+## Independent identity sources
+- [UNED faculty profile](https://www.uned.es/universidad/docentes/psicologia/alejandro-martinez-mingo.html)
+- [UNED research profile](https://portalcientifico.uned.es/investigadores/1200696/detalle)
+- [ORCID](https://orcid.org/0000-0002-8375-0952)
+- [GitHub](https://github.com/alejandrommingo)
+- [ResearchGate](https://www.researchgate.net/profile/Alejandro-Martinez-Mingo)
+- [LinkedIn](https://www.linkedin.com/in/alejandro-mart%C3%ADnez-mingo-6bb258b3/)
+
+## Selected independent sources
+- [UNED: Introduction to Data Analysis (2026/2027)](https://www.uned.es/universidad/inicio/estudios/grados/grado-en-psicologia/asignaturas.html?codAsignatura=62011037&codTitulacion=6201&idContenido=1)
+- [UNED: Computing Methods (2026/2027)](https://www.uned.es/universidad/inicio/estudios/masteres/master-interuniversitario-en-metodologia-de-las-ciencias-del-comportamiento-y-de-la-salud-uned-ucm-y-uam/asignaturas.html?codAsignatura=22201096&codTitulacion=220101&idContenido=1)
+- [UNED: Advanced R Programming (2026/2027)](https://www.uned.es/universidad/inicio/estudios/masteres/master-interuniversitario-en-metodologia-de-las-ciencias-del-comportamiento-y-de-la-salud-uned-ucm-y-uam/asignaturas.html?codAsignatura=22011085&codTitulacion=220101&idContenido=1)
+- [Canal UNED: cognitive biases lecture (2024)](https://canal.uned.es/video/672c6c0b83ed451c5a075e76)
+- [Santalucía Impulsa: Wibber founders interview (2017)](https://www.santaluciaimpulsa.es/blog/entrevistamos-a-los-emprendedores-de-la-startup-wibber)
+
+Contact: a.martinez.m@psi.uned.es
+
+This index is a factual directory, not a replacement for original institutional records or peer-reviewed publications. The llms.txt format is optional and does not guarantee appearance in AI answers.
