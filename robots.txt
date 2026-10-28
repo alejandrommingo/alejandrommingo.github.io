@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alejandrommingo.github.io/sitemap.xml
