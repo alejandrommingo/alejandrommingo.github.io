@@ -31,6 +31,7 @@
  shell.insertBefore(panelLayer,shell.firstChild);
  const panelHeader=shell.querySelector('.diagram-top');
  const panelFooter=shell.querySelector('.diagram-annotations');
+ const disclaimer=$('.model-disclaimer');
  const panelPieces=[];
  const cxCount=lowPower?4:7,cyCount=lowPower?3:5;
  const vertex=(row,col)=>({x:col/cxCount*100+(row===0||row===cyCount||col===0||col===cxCount?0:(pseudo(row*33+col,52)-.5)*3.6),
@@ -151,6 +152,12 @@
    const panelProgress=clamp((dissolve-.015)/.985);
    if(panelHeader)panelHeader.style.opacity=breaking?'0':'1';
    if(panelFooter)panelFooter.style.opacity=breaking?'0':'1';
+   // The exterior controls must leave together with the figure. Otherwise they
+   // remain floating in an empty sticky panel after all geometry is gone.
+   const footerFade=reduced?(release>.25?0:1):1-ease(clamp((release-.015)/.53));
+   orderToggle.style.opacity=String(footerFade);
+   orderToggle.style.pointerEvents=release>.52?'none':'';
+   if(disclaimer)disclaimer.style.opacity=String(footerFade);
    if(breaking||lastBreak>.001){
    for(const piece of panelPieces){
      const t=clamp((panelProgress-piece.lag)/(1-piece.lag)),v=ease(t);
@@ -206,7 +213,12 @@
    const amount=index===0?0:progress[index];
    const current=progress[2]>.20?2:progress[1]>.20?1:0;
    const runwayTop=runway.getBoundingClientRect().top;
-   const release=index===2?clamp((windowHeight*.87-runwayTop)/(windowHeight*.72)):0;
+   // Faster release on mobile: finish the fracture while the following
+   // explanatory note is already entering the viewport, not a screen later.
+   const mobile=matchMedia('(max-width:720px)').matches;
+   const release=index===2
+     ?clamp((windowHeight*(mobile?.85:.87)-runwayTop)/(windowHeight*(mobile?.35:.72)))
+     :0;
    active=current;
    steps.forEach((el,i)=>{
      el.style.setProperty('--phase-progress',progress[i].toFixed(4));
@@ -226,7 +238,7 @@
    const target=i>2?runway:steps[clamp(i,0,2)]?.querySelector('h3');
    if(!target)return;
    const {enter,finish}=readingWindow();
-   const desired=i>2?vh*.43:(enter+finish)*.5;
+   const desired=i>2?vh*.72:(enter+finish)*.5;
    const top=target.getBoundingClientRect().top+scrollY-desired;
    window.scrollTo({top:Math.max(0,top),behavior:reduced?'instant':'smooth'});
  };
