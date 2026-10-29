@@ -177,11 +177,25 @@
    $('#prev-stage').disabled=index===0;$('#next-stage').disabled=false;
    $('#next-stage').setAttribute('aria-label',index===2?(c.lang==='es'?'Continuar a investigación':'Continue to research'):(c.lang==='es'?'Siguiente paso':'Next step'));
  }
+ function syncAnchor(){
+   const vh=document.documentElement.clientHeight||innerHeight;
+   const mobile=matchMedia('(max-width:720px)').matches;
+   if(!mobile)return vh*.65;
+   // The selected heading must become readable BELOW the pinned diagram.
+   const visualBottom=shell.closest('.lab-visual').getBoundingClientRect().bottom;
+   return Math.min(vh*.86,Math.max(vh*.72,visualBottom+35));
+ }
  function update(){
-   const threshold=innerHeight*(innerWidth<=720?.57:.60);let index=0;
-   steps.forEach((s,i)=>{if(s.getBoundingClientRect().top<=threshold)index=i});
-   const rect=steps[index].getBoundingClientRect(),distance=threshold-rect.top;
-   let amount=clamp(distance/(Math.max(160,rect.height)*(innerWidth<=720?.29:.32)));
+   const vh=document.documentElement.clientHeight||innerHeight;
+   const mobile=matchMedia('(max-width:720px)').matches,threshold=syncAnchor();
+   let index=0;
+   steps.forEach((s,i)=>{
+     const head=s.querySelector('h3').getBoundingClientRect();
+     if(head.top+head.height*.35<=threshold)index=i;
+   });
+   const head=steps[index].querySelector('h3').getBoundingClientRect();
+   const distance=threshold-(head.top+head.height*.35);
+   const amount=clamp(distance/Math.max(100,vh*(mobile?.18:.20)));
    // The untitled scroll runway keeps the diagram onscreen while it breaks.
    const runwayTop=runway.getBoundingClientRect().top;
    const release=index===2?clamp((innerHeight*.87-runwayTop)/(innerHeight*.72)):0;
@@ -194,7 +208,16 @@
  }
  function redraw(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
  window.addEventListener('scroll',redraw,{passive:true});window.addEventListener('resize',redraw,{passive:true});
- const go=i=>{if(i>2){runway.scrollIntoView({behavior:reduced?'instant':'smooth',block:'center'});return}steps[clamp(i,0,2)]?.scrollIntoView({behavior:reduced?'instant':'smooth',block:'center'})};
+ const go=i=>{
+   const vh=document.documentElement.clientHeight||innerHeight;
+   const mobile=matchMedia('(max-width:720px)').matches;
+   const target=i>2?runway:steps[clamp(i,0,2)]?.querySelector('h3');
+   if(!target)return;
+   // Same visual anchor as update(): avoid positioning headings under the sticky SVG.
+   const desired=i>2?vh*.43:(mobile?syncAnchor()-vh*.12:vh*.54);
+   const top=target.getBoundingClientRect().top+scrollY-desired;
+   window.scrollTo({top:Math.max(0,top),behavior:reduced?'instant':'smooth'});
+ };
  $('#prev-stage').addEventListener('click',()=>go(active-1));$('#next-stage').addEventListener('click',()=>go(active+1));
  function syncText(){const m=meta();steps.forEach((s,i)=>{s.querySelector('h3').textContent=m.titles[i];s.querySelector('p').textContent=m.texts[i];s.querySelector('.stage-formula').textContent=m.forms[i];s.querySelector('.stage-index').textContent=`0${i} / ${m.stages[i]}`});orderIndicator.textContent=mode==='QP'?c.comparisonQP:c.comparisonPQ;orderToggle.firstChild.textContent=mode==='QP'?c.buttonQP:c.buttonPQ;}
  orderToggle.addEventListener('click',()=>{snapshotReady=false;mode=mode==='QP'?'PQ':'QP';syncText();redraw()});
