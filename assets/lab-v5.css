@@ -77,3 +77,21 @@
 .diagram-shell>.diagram-top{z-index:3}
 .diagram-shell>.diagram-annotations{z-index:4}
 @media(prefers-reduced-motion:reduce){.panel-fragments{display:none!important}.diagram-shell.panel-is-breaking{opacity:0}}
+
+/* Mobile reading rhythm and low-cost geometry, October 2026. */
+.stage-card{position:relative;transition:border-color .2s ease}
+.stage-card.is-current{border-left:2px solid var(--accent);padding-left:clamp(14px,1.8vw,24px)}
+@media(max-width:720px){
+ .stage-card{min-height:64svh;padding:42px 0 28px;scroll-margin-top:55svh}
+ .stage-card[data-step="2"]{min-height:98svh;padding-bottom:18svh}
+ .stage-card.is-current{padding-left:16px}
+ .stage-card h3{font-size:clamp(1.85rem,7.6vw,3rem);line-height:1.12}
+ .comparison-intro{padding:20px 0 12px}
+ .lab-visual{height:min(44svh,405px);top:67px}
+ .diagram-shell{height:calc(100% - 44px)}
+ .break-runway{height:60svh;min-height:310px}
+ .model-disclaimer{margin-top:0}
+ .panel-fragment{will-change:auto}
+ #shatter-layer .fragment-tile{will-change:auto}
+}
+@media(prefers-reduced-motion:reduce){.stage-card{transition:none}}
