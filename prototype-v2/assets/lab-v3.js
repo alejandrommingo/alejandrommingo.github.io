@@ -2,11 +2,11 @@
  * A=(North Korea) is rank-one projector Q=uuᵀ; B=(China) rank-two P=diag(1,1,0).
  * This is a constructed geometric example, not empirical similarities.
  * Norm²(PQ ψ0)=144/394 and Norm²(QP ψ0)=1296/(25×394).
- * Each selected projector changes the conditional state. Visual fragments are metaphorical.
+ * Each selected projector changes the conditional state.
  */
 (()=>{'use strict';
  const c=window.LAB_V3||{},doc=document.documentElement,$=s=>document.querySelector(s);
- const shell=$('.diagram-shell'),svg=$('#experiment-svg'),arrow=$('#state-arrow'),dot=$('#state-dot'),plane=$('#plane-assembly'),line=$('#line-subspace'),lineLabel=$('#line-label'),label=$('#state-label'),ghost=$('#initial-ghost'),drop=$('#drop-line'),projectionDot=$('#projection-dot'),ring=$('#impact-ring'),core=$('#drawing-core'),mathLabels=$('#math-labels'),status=$('#stage-name'),formula=$('#stage-formula'),orderIndicator=$('#order-indicator'),orderToggle=$('#order-toggle'),steps=[...document.querySelectorAll('.stage-card')],previous=$('#previous-dot'),trail=$('#state-history'),shards=[...document.querySelectorAll('.shard')];
+ const shell=$('.diagram-shell'),svg=$('#experiment-svg'),arrow=$('#state-arrow'),dot=$('#state-dot'),plane=$('#plane-assembly'),line=$('#line-subspace'),lineLabel=$('#line-label'),label=$('#state-label'),ghost=$('#initial-ghost'),drop=$('#drop-line'),projectionDot=$('#projection-dot'),ring=$('#impact-ring'),core=$('#drawing-core'),mathLabels=$('#math-labels'),status=$('#stage-name'),formula=$('#stage-formula'),orderIndicator=$('#order-indicator'),orderToggle=$('#order-toggle'),steps=[...document.querySelectorAll('.stage-card')],previous=$('#previous-dot'),trail=$('#state-history'),shards=[...document.querySelectorAll('.shard')],shatter=$('#shatter-layer'),runway=$('#break-runway');
  if(!shell||steps.length!==3)throw Error('Missing prototype v3 markup');
  const psi0=[9,12,13].map(x=>x/Math.sqrt(394)),u=[.8,0,.6],dot3=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0),
   Q=v=>u.map(x=>x*dot3(u,v)),P=v=>[v[0],v[1],0],norm=v=>Math.hypot(...v),normalize=v=>v.map(x=>x/norm(v)),normSq=v=>dot3(v,v);
@@ -32,6 +32,35 @@
    sh.setAttribute('d',`M${num(start.x)} ${num(start.y)}l${num(dx)} ${num(dy)}`);
    return {...start,vx:(pseudo(i,7)-.5)*190,vy:(pseudo(i,8)-.5)*145-30,ang:(pseudo(i,9)-.5)*140,delay:pseudo(i,10)*.38};
  });
+
+ // Irregular triangular clips allow the *actual drawn geometry* to fracture.
+ const NS='http://www.w3.org/2000/svg';
+ const clipDefs=svg.querySelector('defs');
+ const make=(tag,attrs)=>{const el=document.createElementNS(NS,tag);Object.entries(attrs||{}).forEach(([k,v])=>el.setAttribute(k,String(v)));return el};
+ const tiles=[];
+ const snapshotBox=make('g',{id:'shatter-source'});clipDefs.appendChild(snapshotBox);
+ let snapshotReady=false;
+ const cols=14,rows=11,stepX=640/cols,stepY=540/rows;
+ const vtx=(r,col)=>{
+   const boundary=r===0||r===rows||col===0||col===cols;
+   return {x:col*stepX+(boundary?0:(pseudo(r*50+col,23)-.5)*stepX*.28),
+           y:r*stepY+(boundary?0:(pseudo(r*50+col,24)-.5)*stepY*.28)};
+ };
+ const vertices=Array.from({length:rows+1},(_,r)=>Array.from({length:cols+1},(_,col)=>vtx(r,col)));
+ for(let r=0;r<rows;r++)for(let col=0;col<cols;col++){
+   const a=vertices[r][col],b=vertices[r][col+1],d=vertices[r+1][col],e=vertices[r+1][col+1];
+   for(const points of [[a,b,e],[a,e,d]]){
+     const id='shatter-clip-'+tiles.length,clip=make('clipPath',{id,clipPathUnits:'userSpaceOnUse'});
+     clip.appendChild(make('polygon',{points:points.map(p=>num(p.x)+','+num(p.y)).join(' ')}));clipDefs.appendChild(clip);
+     const g=make('g',{'class':'fragment-tile','clip-path':'url(#'+id+')'});
+     g.appendChild(make('use',{'href':'#shatter-source'}));
+     shatter.appendChild(g);
+     const ix=tiles.length,center={x:points.reduce((v,p)=>v+p.x,0)/3,y:points.reduce((v,p)=>v+p.y,0)/3};
+     const angle=2*Math.PI*pseudo(ix,31),dist=55+230*pseudo(ix,32);
+     tiles.push({el:g,center,dx:Math.cos(angle)*dist,dy:Math.sin(angle)*dist+115,spin:(pseudo(ix,33)-.5)*250,lag:pseudo(ix,34)*.18});
+   }
+ }
+
  function draw(index,amount,release){
    const states=sequence(),f=reduced?(amount>.25?1:0):ease(amount);
    const point=index===0?states[0]:index===1?mix(states[0],states[1],f):mix(states[1],states[2],f);
@@ -56,7 +85,35 @@
    shell.style.boxShadow=peak>0?`0 0 ${Math.round(80*peak)}px ${Math.round(7*peak)}px color-mix(in srgb,var(--accent) ${Math.round(21*peak)}%,transparent)`:'none';
    const newPt=map(states[2]);const dropStage=index===2&&mode==='QP';drop.style.opacity=String(dropStage?.72*f*appears:0);
    drop.setAttribute('x1',num(prior.x));drop.setAttribute('y1',num(prior.y));drop.setAttribute('x2',num(prior.x+(newPt.x-prior.x)*f));drop.setAttribute('y2',num(prior.y+(newPt.y-prior.y)*f));projectionDot.setAttribute('cx',num(newPt.x));projectionDot.setAttribute('cy',num(newPt.y));projectionDot.style.opacity=String(dropStage?.68*f*appears:0);
-   core.style.opacity=String(appears);mathLabels.style.opacity=String(appears);
+
+   // Capture the finished state at full opacity before the fragments move.
+   if(dissolve<.001)snapshotReady=false;
+   else if(!snapshotReady){
+     snapshotBox.replaceChildren();
+     for(const original of [core,mathLabels]){
+       const copy=original.cloneNode(true);copy.removeAttribute('id');copy.style.opacity='1';
+       const originals=[original,...original.querySelectorAll('*')];
+       const copies=[copy,...copy.querySelectorAll('*')];
+       originals.forEach((node,i)=>{
+         const style=getComputedStyle(node),dest=copies[i];
+         for(const prop of ['fill','fill-opacity','stroke','stroke-width','stroke-opacity','stroke-dasharray','stroke-linecap','stroke-linejoin','font-family','font-size','font-weight','opacity']){
+           const val=style.getPropertyValue(prop);if(val)dest.style.setProperty(prop,val);
+         }
+         if(node===original)dest.style.opacity='1';
+         dest.removeAttribute('id');
+       });
+       snapshotBox.appendChild(copy);
+     }
+     snapshotReady=true;
+   }
+   core.style.opacity=String(1-ease(dissolve*1.28));mathLabels.style.opacity=String(1-ease(dissolve*1.28));
+   const breakProgress=clamp((dissolve-.02)/.98);
+   shatter.style.opacity=String(reduced?0:(breakProgress>0?1:0));
+   for(const piece of tiles){
+     const t=clamp((breakProgress-piece.lag)/(1-piece.lag)),m=ease(t);
+     piece.el.setAttribute('transform','translate('+num(piece.dx*m)+' '+num(piece.dy*m+110*m*m)+') rotate('+num(piece.spin*m)+' '+num(piece.center.x)+' '+num(piece.center.y)+')');
+     piece.el.style.opacity=String(reduced?0:1-ease(clamp((t-.5)/.5)));
+   }
    // A break-apart effect from the last projection to the next section, not an additional stage.
    for(let i=0;i<shards.length;i++){
      const el=shards[i],pos=posList[i],t=clamp((dissolve-pos.delay)/(1-pos.delay));
@@ -64,7 +121,7 @@
      el.setAttribute('transform',`translate(${num(pos.vx*ease(t))} ${num(pos.vy*ease(t)+140*ease(t)*ease(t))}) rotate(${num(pos.ang*ease(t))} ${num(pos.x)} ${num(pos.y)})`);
    }
    // Keep mathematical elements distinct from the illustration's final fade.
-   const m=meta();status.textContent=dissolve>.65?c.end:m.stages[index];formula.textContent=m.forms[index];
+   const m=meta();status.textContent=m.stages[index];formula.textContent=m.forms[index];
    $('#stage-count').textContent=`0${index+1} / 03`;
    $('#prev-stage').disabled=index===0;$('#next-stage').disabled=false;
    $('#next-stage').setAttribute('aria-label',index===2?(c.lang==='es'?'Continuar a investigación':'Continue to research'):(c.lang==='es'?'Siguiente paso':'Next step'));
@@ -74,18 +131,18 @@
    steps.forEach((s,i)=>{if(s.getBoundingClientRect().top<=threshold)index=i});
    const rect=steps[index].getBoundingClientRect(),distance=threshold-rect.top;
    let amount=clamp(distance/(Math.max(180,rect.height)*.38));
-   // Continue into a late, genuine breaking/disintegration as the 2nd card scrolls past.
-   const progress=clamp(distance/(rect.height+threshold));
-   const release=index===2?clamp((progress-.66)/.26):0;
+   // The untitled scroll runway keeps the diagram onscreen while it breaks.
+   const runwayTop=runway.getBoundingClientRect().top;
+   const release=index===2?clamp((innerHeight*.87-runwayTop)/(innerHeight*.72)):0;
    active=index;draw(index,amount,release);
    const max=document.documentElement.scrollHeight-innerHeight;
    $('.reading-progress').style.width=(max>0?100*scrollY/max:0)+'%';
  }
  function redraw(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
  window.addEventListener('scroll',redraw,{passive:true});window.addEventListener('resize',redraw,{passive:true});
- const go=i=>{if(i>2){$('#research').scrollIntoView({behavior:reduced?'instant':'smooth',block:'start'});return}steps[clamp(i,0,2)]?.scrollIntoView({behavior:reduced?'instant':'smooth',block:'center'})};
+ const go=i=>{if(i>2){runway.scrollIntoView({behavior:reduced?'instant':'smooth',block:'center'});return}steps[clamp(i,0,2)]?.scrollIntoView({behavior:reduced?'instant':'smooth',block:'center'})};
  $('#prev-stage').addEventListener('click',()=>go(active-1));$('#next-stage').addEventListener('click',()=>go(active+1));
  function syncText(){const m=meta();steps.forEach((s,i)=>{s.querySelector('h3').textContent=m.titles[i];s.querySelector('p').textContent=m.texts[i];s.querySelector('.stage-formula').textContent=m.forms[i];s.querySelector('.stage-index').textContent=`0${i} / ${m.stages[i]}`});orderIndicator.textContent=mode==='QP'?c.comparisonQP:c.comparisonPQ;orderToggle.firstChild.textContent=mode==='QP'?c.buttonQP:c.buttonPQ;}
- orderToggle.addEventListener('click',()=>{mode=mode==='QP'?'PQ':'QP';syncText();redraw()});
+ orderToggle.addEventListener('click',()=>{snapshotReady=false;mode=mode==='QP'?'PQ':'QP';syncText();redraw()});
  syncText();requestAnimationFrame(update);
 })();
