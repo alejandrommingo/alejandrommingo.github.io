@@ -181,7 +181,7 @@
    const threshold=innerHeight*(innerWidth<=720?.57:.60);let index=0;
    steps.forEach((s,i)=>{if(s.getBoundingClientRect().top<=threshold)index=i});
    const rect=steps[index].getBoundingClientRect(),distance=threshold-rect.top;
-   let amount=clamp(distance/(Math.max(180,rect.height)*.38));
+   let amount=clamp(distance/(Math.max(160,rect.height)*(innerWidth<=720?.29:.32)));
    // The untitled scroll runway keeps the diagram onscreen while it breaks.
    const runwayTop=runway.getBoundingClientRect().top;
    const release=index===2?clamp((innerHeight*.87-runwayTop)/(innerHeight*.72)):0;
