@@ -95,3 +95,22 @@
  #shatter-layer .fragment-tile{will-change:auto}
 }
 @media(prefers-reduced-motion:reduce){.stage-card{transition:none}}
+
+/* Phase-to-phase reading: compact chapters with native, proximity-only scroll snap.
+   Keeps wheel, touch and keyboard scrolling under the browser's control. */
+@media (prefers-reduced-motion: no-preference){
+  html:has(.experiment){scroll-snap-type:y proximity;scroll-padding-top:35svh}
+  .stage-card{scroll-snap-align:start;scroll-snap-stop:normal;scroll-margin-top:0!important}
+}
+@media (min-width:721px){
+  .stage-card{min-height:46svh;padding:20px 15px 18px 0;justify-content:center}
+  .stage-card[data-step="2"]{min-height:64svh;padding-bottom:9svh}
+  .break-runway{height:62svh;min-height:320px}
+}
+@media (max-width:720px){
+  html:has(.experiment){scroll-padding-top:42svh}
+  .stage-card{min-height:43svh;padding:12px 0 20px;justify-content:flex-end;scroll-margin-top:0!important}
+  .stage-card[data-step="2"]{min-height:55svh;padding:12px 0 8svh;justify-content:center}
+  .comparison-intro{padding:12px 0 6px}
+  .break-runway{height:60svh;min-height:300px}
+}
