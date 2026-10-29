@@ -19,9 +19,9 @@ html:has(.experiment){scroll-snap-type:none!important;scroll-padding-top:78px!im
 }
 .stage-card::before{height:76%;background:var(--rule);opacity:.65}
 .stage-card::after{
-  height:calc(76% * var(--phase-progress,0));
-  background:var(--accent);
-  transition:height .06s linear;
+  height:76%;background:var(--accent);
+  transform:scaleY(var(--phase-progress,0));transform-origin:center top;
+  transition:transform .06s linear;
 }
 .stage-card.is-current h3{color:var(--ink)}
 .stage-card:not(.is-current) h3{color:var(--muted)}
