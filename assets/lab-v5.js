@@ -96,14 +96,20 @@
    const dissolve=index===2?(reduced?(release>.35?1:0):ease(release)):0;
    const appears=1-dissolve;
    arrow.setAttribute('x2',num(now.x));arrow.setAttribute('y2',num(now.y));dot.setAttribute('cx',num(now.x));dot.setAttribute('cy',num(now.y));
-   label.setAttribute('x',num(now.x+16));label.setAttribute('y',num(now.y-18));label.textContent=index===0?'ψ₀':index===1?'ψ₁':'ψ₂';
+   label.setAttribute('x',num(now.x+16));label.setAttribute('y',num(now.y-18));label.textContent=index===0?'ψ₀':index===1?(f<.32?'ψ₀':'ψ₁'):(f<.32?'ψ₁':'ψ₂');
    ghost.setAttribute('x1',num(ox.x));ghost.setAttribute('y1',num(ox.y));ghost.setAttribute('x2',num(prior.x));ghost.setAttribute('y2',num(prior.y));ghost.style.opacity=String((isChanging?.35:0)*appears);
    previous.setAttribute('cx',num(prior.x));previous.setAttribute('cy',num(prior.y));previous.style.opacity=String((isChanging?.9:0)*appears);
    trail.setAttribute('d',isChanging?`M${num(prior.x)} ${num(prior.y)}L${num(now.x)} ${num(now.y)}`:'');
    trail.style.opacity=String((isChanging?.9:0)*appears);
-   const showLine=mode==='QP'?(index===0?.16:1):(index===2?1:.16);
+   // Geometry gains prominence continuously, rather than switching opacity
+   // instantly when the next chapter becomes active.
+   const showLine=mode==='QP'
+     ?(index===0?.16:index===1?.16+.84*f:1)
+     :(index===2?.16+.84*f:.16);
    line.style.opacity=String(showLine*appears);lineLabel.style.opacity=String(showLine*appears);
-   const planeFocus=mode==='QP'?(index===0?.18:index===1?.24:.86):(index===0?.18:.86);
+   const planeFocus=mode==='QP'
+     ?(index===2?.18+.68*f:.18)
+     :(index===0?.18:index===1?.18+.68*f:.86);
    plane.style.opacity=String(planeFocus*appears);
    const impactStage=mode==='QP'?2:1;
    plane.style.transform=index===impactStage&&!reduced?`translateY(${num(-26*(1-ease(amount)))}px)`:'none';
@@ -177,44 +183,50 @@
    $('#prev-stage').disabled=index===0;$('#next-stage').disabled=false;
    $('#next-stage').setAttribute('aria-label',index===2?(c.lang==='es'?'Continuar a investigación':'Continue to research'):(c.lang==='es'?'Siguiente paso':'Next step'));
  }
- function syncAnchor(){
+ // One continuous, reversible scroll timeline. Every transition belongs to the
+ // visible heading, not to a discrete threshold that suddenly replaces the scene.
+ function readingWindow(){
    const vh=document.documentElement.clientHeight||innerHeight;
    const mobile=matchMedia('(max-width:720px)').matches;
-   if(!mobile)return vh*.65;
-   // The selected heading must become readable BELOW the pinned diagram.
-   const visualBottom=shell.closest('.lab-visual').getBoundingClientRect().bottom;
-   return Math.min(vh*.86,Math.max(vh*.72,visualBottom+35));
+   if(!mobile)return {enter:vh*.85,finish:vh*.39};
+   const bottom=shell.closest('.lab-visual').getBoundingClientRect().bottom;
+   const finish=clamp(bottom+22,vh*.47,vh*.65);
+   return {enter:Math.min(vh*.91,finish+Math.max(155,vh*.36)),finish};
  }
  function update(){
-   const vh=document.documentElement.clientHeight||innerHeight;
-   const mobile=matchMedia('(max-width:720px)').matches,threshold=syncAnchor();
-   let index=0;
-   steps.forEach((s,i)=>{
-     const head=s.querySelector('h3').getBoundingClientRect();
-     if(head.top+head.height*.35<=threshold)index=i;
+   const windowHeight=document.documentElement.clientHeight||innerHeight;
+   const {enter,finish}=readingWindow();
+   const progress=steps.map(step=>{
+     const heading=step.querySelector('h3').getBoundingClientRect();
+     return clamp((enter-heading.top)/(enter-finish));
    });
-   const head=steps[index].querySelector('h3').getBoundingClientRect();
-   const distance=threshold-(head.top+head.height*.35);
-   const amount=clamp(distance/Math.max(100,vh*(mobile?.18:.20)));
-   // The untitled scroll runway keeps the diagram onscreen while it breaks.
+   // Stage 1 ends exactly at psi_1, where stage 2 starts. This also works
+   // in reverse without snapping the diagram back to the initial vector.
+   const index=progress[2]>0?2:progress[1]>0?1:0;
+   const amount=index===0?0:progress[index];
+   const current=progress[2]>.20?2:progress[1]>.20?1:0;
    const runwayTop=runway.getBoundingClientRect().top;
-   const release=index===2?clamp((innerHeight*.87-runwayTop)/(innerHeight*.72)):0;
-   active=index;
-   if(index!==lastActive){steps.forEach((el,i)=>el.classList.toggle('is-current',i===index));lastActive=index;}
+   const release=index===2?clamp((windowHeight*.87-runwayTop)/(windowHeight*.72)):0;
+   active=current;
+   steps.forEach((el,i)=>{
+     el.style.setProperty('--phase-progress',progress[i].toFixed(4));
+     el.classList.toggle('is-current',i===current);
+     el.classList.toggle('is-complete',i<current);
+   });
+   lastActive=current;
    if(release<.999||!finished)draw(index,amount,release);
    finished=release>=.999;
-   const max=document.documentElement.scrollHeight-innerHeight;
+   const max=document.documentElement.scrollHeight-windowHeight;
    $('.reading-progress').style.width=(max>0?100*scrollY/max:0)+'%';
  }
  function redraw(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
  window.addEventListener('scroll',redraw,{passive:true});window.addEventListener('resize',redraw,{passive:true});
  const go=i=>{
    const vh=document.documentElement.clientHeight||innerHeight;
-   const mobile=matchMedia('(max-width:720px)').matches;
    const target=i>2?runway:steps[clamp(i,0,2)]?.querySelector('h3');
    if(!target)return;
-   // Same visual anchor as update(): avoid positioning headings under the sticky SVG.
-   const desired=i>2?vh*.43:(mobile?syncAnchor()-vh*.12:vh*.54);
+   const {enter,finish}=readingWindow();
+   const desired=i>2?vh*.43:(enter+finish)*.5;
    const top=target.getBoundingClientRect().top+scrollY-desired;
    window.scrollTo({top:Math.max(0,top),behavior:reduced?'instant':'smooth'});
  };
