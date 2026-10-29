@@ -13,7 +13,7 @@ function snap(){if(!touched||performance.now()<programUntil||document.visibility
 const now=scrollY,ys=steps.map(yFor),low=ys[0]-Math.min(90,innerHeight*.14),high=ys[2]+Math.max(105,innerHeight*.19);
 if(now<low||now>high){snapIndex=-1;return}
 let nearest=ys.map(v=>Math.abs(now-v)).indexOf(Math.min(...ys.map(v=>Math.abs(now-v))));
-if(snapIndex>=0){const move=now-ys[snapIndex],step=Math.min(65,innerHeight*.095);
+if(snapIndex>=0){const move=now-ys[snapIndex],step=Math.min(38,innerHeight*.065);
 if(dir>0&&move>step&&snapIndex<2)nearest=Math.max(nearest,snapIndex+1);
 else if(dir<0&&move<-step&&snapIndex>0)nearest=Math.min(nearest,snapIndex-1);
 else if(Math.abs(move)<20)return}
