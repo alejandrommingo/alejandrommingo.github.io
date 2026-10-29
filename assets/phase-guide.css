@@ -48,13 +48,15 @@ html:has(.experiment){scroll-snap-type:none!important;scroll-padding-top:78px!im
   }
   .stage-card.is-current{padding-left:18px!important}
   .stage-card[data-step="2"]{
-    min-height:72svh!important;padding:24px 0 15svh 18px!important;
+    min-height:64svh!important;padding:24px 0 8svh 18px!important;
     justify-content:center!important;
   }
   .stage-card h3{margin:8px 0 10px!important;font-size:clamp(1.9rem,7.4vw,3rem)!important}
   .stage-card p{margin-bottom:7px!important}
   .comparison-intro{padding:16px 0 13px!important}
-  .break-runway{height:82svh!important;min-height:420px!important}
+  /* Keep only a short runway for the fracture; long empty scroll is no longer needed. */
+  .break-runway{height:20svh!important;min-height:0!important}
+  .references-note{padding-top:14px;padding-bottom:24px}
 }
 @media(max-width:390px){
   .lab-visual{height:min(38svh,345px)!important}
