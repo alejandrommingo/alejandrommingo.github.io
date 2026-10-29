@@ -1,17 +1,17 @@
 /* Academic geometric illustration, v3.
  * A=(North Korea) is rank-one projector Q=uuᵀ; B=(China) rank-two P=diag(1,1,0).
  * This is a constructed geometric example, not empirical similarities.
- * Norm²(PQ ψ0)=0.47775744 and Norm²(QP ψ0)=0.2304.
+ * Norm²(PQ ψ0)=144/394 and Norm²(QP ψ0)=1296/(25×394).
  * Each selected projector changes the conditional state. Visual fragments are metaphorical.
  */
 (()=>{'use strict';
  const c=window.LAB_V3||{},doc=document.documentElement,$=s=>document.querySelector(s);
  const shell=$('.diagram-shell'),svg=$('#experiment-svg'),arrow=$('#state-arrow'),dot=$('#state-dot'),plane=$('#plane-assembly'),line=$('#line-subspace'),lineLabel=$('#line-label'),label=$('#state-label'),ghost=$('#initial-ghost'),drop=$('#drop-line'),projectionDot=$('#projection-dot'),ring=$('#impact-ring'),core=$('#drawing-core'),mathLabels=$('#math-labels'),status=$('#stage-name'),formula=$('#stage-formula'),orderIndicator=$('#order-indicator'),orderToggle=$('#order-toggle'),steps=[...document.querySelectorAll('.stage-card')],previous=$('#previous-dot'),trail=$('#state-history'),shards=[...document.querySelectorAll('.shard')];
  if(!shell||steps.length!==3)throw Error('Missing prototype v3 markup');
- const psi0=[.6,.48,.64],u=[.8,0,.6],dot3=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0),
+ const psi0=[9,12,13].map(x=>x/Math.sqrt(394)),u=[.8,0,.6],dot3=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0),
   Q=v=>u.map(x=>x*dot3(u,v)),P=v=>[v[0],v[1],0],norm=v=>Math.hypot(...v),normalize=v=>v.map(x=>x/norm(v)),normSq=v=>dot3(v,v);
  const QP=[psi0,u,[1,0,0]],PQ=[psi0,normalize(P(psi0)),u],pQP=normSq(P(Q(psi0))),pPQ=normSq(Q(P(psi0)));
- if(Math.abs(norm(psi0)-1)>1e-9||Math.abs(pQP-.47775744)>1e-8||Math.abs(pPQ-.2304)>1e-8)throw Error('Projector validation error');
+ if(Math.abs(norm(psi0)-1)>1e-9||Math.abs(pQP-144/394)>1e-8||Math.abs(pPQ-1296/(25*394))>1e-8||Math.abs(normSq(Q(psi0))-normSq(P(psi0)))>1e-9)throw Error('Projector validation error');
  const map=v=>({x:310+116*v[0]-92*v[1],y:335+28*v[0]+50*v[1]-176*v[2]}),clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),ease=v=>{const t=clamp(v);return t*t*(3-2*t)},num=n=>n.toFixed(2),mix=(a,b,t)=>a.map((v,i)=>v+(b[i]-v)*t);
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  let mode='QP',active=0,queued=false;
