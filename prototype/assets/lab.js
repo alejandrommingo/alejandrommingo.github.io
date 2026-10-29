@@ -66,9 +66,12 @@
   line.style.opacity=String(showLine*(1-dissolve));lineLabel.style.opacity=String(showLine*(1-dissolve));
   const planeFocus=order==='QP'?(index===0?.18:index===1?.25:.8):index===0?.17:.8;
   plane.style.opacity=String(planeFocus*(1-dissolve));
-  // The plane retains its exact projected geometry; only opacity and impact ring change.
-  let pEnd=mapVector(order==='QP'?psiQP[2]:psiPQ[2]);
-  const peak=(index===2)?Math.max(0,1-Math.abs(t-.72)/.28):0;
+  // A brief vertical entrance and impact pulse make the selected plane legible.
+  // Intermediate frames are illustrative; the final projector geometry stays fixed.
+  const fallStage=order==='QP'?2:1;
+  plane.style.transform=(index===fallStage && !reduced)?`translateY(${num(-23*(1-ease(t)))}px)`:'none';
+  let pEnd=mapVector(order==='QP'?psiQP[2]:psiPQ[1]);
+  const peak=(index===fallStage)?Math.max(0,1-Math.abs(t-.72)/.28):0;
   ring.setAttribute('cx',num(pEnd.x));ring.setAttribute('cy',num(pEnd.y));ring.setAttribute('r',num(10+peak*70));ring.style.opacity=String(peak*.76);
   shell.style.boxShadow=peak>0?`0 0 ${Math.round(72*peak)}px ${Math.round(8*peak)}px color-mix(in srgb,var(--accent) ${Math.round(24*peak)}%,transparent)`:'none';
   const px=mapVector(order==='QP'?P(u):Q(normalize(P(v0))));
