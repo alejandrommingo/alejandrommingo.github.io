@@ -52,3 +52,15 @@
  .svg-stage .plane-label,.svg-stage .accent-label{font-size:11px}
 }
 @media(max-width:390px){.hero-actions .underline-link{font-size:9px}.hero-actions .understated-link{font-size:10px}}
+/* v4: restrained editorial accents, linked affiliations and scroll-triggered fragments. */
+.accent-word{color:var(--accent)}
+:root[data-theme="dark"] .accent-word{color:var(--teal)}
+.profile-grid strong a{color:var(--ink);text-decoration:none;text-decoration-color:var(--accent);text-underline-offset:5px}
+.profile-grid strong a:hover,.profile-grid strong a:focus-visible{color:var(--accent);text-decoration:underline}
+:root[data-theme="dark"] .profile-grid strong a:hover{color:var(--teal)}
+.break-runway{height:80svh;min-height:400px;pointer-events:none}
+#shatter-layer{pointer-events:none;opacity:0;isolation:isolate}
+#shatter-layer .fragment-tile{will-change:transform,opacity}
+.diagram-shell{isolation:isolate;overflow:hidden}
+@media(max-width:720px){.break-runway{height:75svh;min-height:375px}}
+@media(prefers-reduced-motion:reduce){#shatter-layer{display:none}}
