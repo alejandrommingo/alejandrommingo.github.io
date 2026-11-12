@@ -114,3 +114,9 @@
   .comparison-intro{padding:12px 0 6px}
   .break-runway{height:60svh;min-height:300px}
 }
+
+/* Direct booking link in the final contact section. */
+.booking-cta{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:30px;padding-top:24px;border-top:1px solid color-mix(in srgb,currentColor 28%,transparent)}
+.booking-cta>.mono{opacity:.7}
+.booking-cta a{font-size:clamp(1.12rem,1.8vw,1.4rem);font-weight:650;line-height:1.4;border-bottom:1px solid currentColor;padding-bottom:5px}
+.booking-cta .booking-hint{font-size:12px;opacity:.78;line-height:1.5}
