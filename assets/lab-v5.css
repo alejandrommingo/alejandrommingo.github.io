@@ -156,3 +156,17 @@
   .civic-logo{max-width:210px}}
 @media(prefers-reduced-motion:reduce){.civic-link{transition:none}
   .civic-link:hover,.civic-link:focus-visible{transform:none}}
+
+
+/* Actual Marea Verde artwork supplied by the site owner.
+   Retain its proportions and green background (the optimized PNG has a
+   transparent green field and white lettering/drawings). */
+.civic-logo{justify-content:center;height:150px}
+.civic-logo img{max-height:132px;aspect-ratio:auto;object-fit:contain}
+.civic-logo--marea{background:#008001;border-color:#008001}
+.civic-logo--marea img{width:auto;max-width:100%;max-height:140px;aspect-ratio:400/292}
+@media(max-width:560px){
+ .civic-logo{height:95px}
+ .civic-logo img{max-height:82px}
+ .civic-logo--marea img{max-height:91px}
+}
