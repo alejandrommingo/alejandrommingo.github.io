@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324 100" role="img" aria-labelledby="title desc">
+<title id="title">UNEDxPalestina</title><desc id="desc">Identificador tipográfico con los colores del colectivo.</desc>
+<rect width="324" height="100" rx="4" fill="#f8f6eb"/>
+<path d="M16 16h292" stroke="#b6c5bb" stroke-width="1"/>
+<text x="16" y="57" textLength="292" lengthAdjust="spacingAndGlyphs" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="800" letter-spacing="-.4"><tspan fill="#b95039">#</tspan><tspan fill="#1b3332">UNED</tspan><tspan fill="#b95039">x</tspan><tspan fill="#278264">PALESTINA</tspan></text>
+<path d="M16 77h93" stroke="#1b3332" stroke-width="4"/><path d="M113 77h92" stroke="#f8f6eb" stroke-width="4"/><path d="M209 77h99" stroke="#278264" stroke-width="4"/>
+<path d="M16 70l12 7-12 7z" fill="#b95039"/>
+</svg>
