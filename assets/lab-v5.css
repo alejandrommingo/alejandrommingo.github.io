@@ -120,3 +120,39 @@
 .booking-cta>.mono{opacity:.7}
 .booking-cta a{font-size:clamp(1.12rem,1.8vw,1.4rem);font-weight:650;line-height:1.4;border-bottom:1px solid currentColor;padding-bottom:5px}
 .booking-cta .booking-hint{font-size:12px;opacity:.78;line-height:1.5}
+
+
+/* Personal civic commitments follow the biography without becoming career credentials.
+   The wordmark tiles are lightweight, website-specific identifiers, not institutional logos. */
+.civic-note{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.55fr);gap:clamp(26px,4.7vw,78px);
+  margin-top:clamp(36px,5vw,72px);padding-top:clamp(30px,4vw,54px);border-top:1px solid var(--rule)}
+.civic-kicker{display:block;color:var(--teal);letter-spacing:.11em;font-size:11px}
+.civic-context h3{font:400 clamp(1.9rem,2.5vw,3.25rem)/1.11 Georgia,serif;
+  letter-spacing:-.045em;margin:17px 0 16px;max-width:540px}
+.civic-context p{max-width:560px;font-size:14px;line-height:1.65;color:var(--muted);margin:0}
+.civic-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:14px}
+.civic-link{display:flex;flex-direction:column;gap:17px;min-width:0;min-height:226px;
+  border:1px solid var(--rule);padding:clamp(15px,1.7vw,24px);
+  color:var(--ink);background:var(--paper);text-decoration:none;
+  transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+.civic-link:hover,.civic-link:focus-visible{border-color:var(--teal);transform:translateY(-2px);
+  box-shadow:0 10px 24px -18px var(--shadow);color:var(--ink)}
+.civic-logo{display:flex;align-items:center;min-height:70px;padding:5px 9px;
+  background:#f8f6eb;border:1px solid #d6ddd2}
+.civic-logo img{display:block;width:100%;max-width:280px;height:auto;aspect-ratio:324/100;object-fit:contain}
+.civic-card-info{display:flex;flex-direction:column;gap:7px;margin-top:auto}
+.civic-card-info strong{font:400 clamp(1.1rem,1.4vw,1.35rem)/1.18 Georgia,serif;letter-spacing:-.015em}
+.civic-card-info strong span{font:600 14px ui-monospace,monospace;color:var(--teal)}
+.civic-card-info small{font-size:12px;line-height:1.55;color:var(--muted)}
+@media(max-width:1050px){.civic-note{grid-template-columns:1fr;gap:27px}
+  .civic-context p{max-width:680px}}
+@media(max-width:560px){.civic-links{grid-template-columns:1fr;gap:12px}
+  .civic-link{min-height:0;display:grid;grid-template-columns:125px 1fr;align-items:center;gap:15px;padding:13px}
+  .civic-logo{padding:4px 6px;min-height:70px}
+  .civic-card-info{margin-top:0}
+  .civic-card-info strong{font-size:1.14rem}
+  .civic-context h3{font-size:clamp(1.8rem,8vw,2.3rem)}}
+@media(max-width:375px){.civic-link{grid-template-columns:1fr}
+  .civic-logo{max-width:210px}}
+@media(prefers-reduced-motion:reduce){.civic-link{transition:none}
+  .civic-link:hover,.civic-link:focus-visible{transform:none}}
