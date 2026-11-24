@@ -249,3 +249,51 @@
  }
 }
 @media(prefers-reduced-motion:reduce){.editorial-feature-art{transition:none}}
+
+
+/* Approved 2026 issue imagery: full poster on desktop and a dedicated
+   horizontal graphic on phones. No crop, no duplicate artwork downloads. */
+.editorial-feature{
+  grid-template-columns:minmax(210px,285px) minmax(0,1fr);
+  grid-template-rows:auto 1fr;
+  align-items:start;
+  gap:clamp(20px,2.7vw,38px);
+}
+.editorial-feature-label{grid-column:1/-1;grid-row:1}
+.editorial-feature-art{
+  grid-column:1;grid-row:2;min-height:0;
+  width:100%;align-self:start;max-height:none;
+  background:#fbf8f7;border:1px solid rgba(151,133,185,.22);
+  overflow:hidden;
+}
+.editorial-feature-art picture{display:block;width:100%}
+.editorial-feature-art img{
+  width:100%;height:auto;max-height:none;min-height:0;
+  aspect-ratio:340/361;object-fit:contain;object-position:center;
+}
+.editorial-feature-content{
+  grid-column:2;grid-row:2;
+  display:flex;flex-direction:column;justify-content:center;
+  align-items:flex-start;gap:24px;min-width:0;align-self:stretch;
+}
+@media(max-width:970px){
+  .editorial-feature{grid-template-columns:minmax(190px,245px) minmax(0,1fr)}
+  .editorial-feature-label{grid-column:1/-1;grid-row:1}
+  .editorial-feature-art{grid-column:1;grid-row:2}
+  .editorial-feature-content{grid-column:2;grid-row:2}
+}
+@media(max-width:680px){
+  .editorial-feature{display:grid;grid-template-columns:1fr;gap:18px}
+  .editorial-feature-label{grid-column:1;grid-row:1}
+  .editorial-feature-art{
+    grid-column:1;grid-row:2;min-height:0;max-height:none;
+    width:100%;border:0;
+  }
+  .editorial-feature-art img{
+    width:100%;height:auto;min-height:0;max-height:none;
+    aspect-ratio:550/183;object-fit:contain;object-position:center;
+  }
+  .editorial-feature-content{
+    grid-column:1;grid-row:3;gap:18px;
+  }
+}
