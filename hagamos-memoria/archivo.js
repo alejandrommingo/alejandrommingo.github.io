@@ -109,7 +109,9 @@
     const e=snapshot(name,date); if(!e)return "";
     const capacity=name==="Congreso"?350:(date>="2024-06-09"?61:date>="2020-02-01"?59:54);
     const units=name==="Congreso"?"del Congreso":"de España";
-    return `<div class="seat-cell"><div class="seat-name">${esc(name)}</div><div class="seat-number">${esc(totalText(e))} ${e.seats!=null?`<small>de ${capacity} ${units}</small>`:""}${seatDiagram(e.seats,capacity)}</div><p><strong>${esc(e.list)}</strong>${e.own!=null&&e.own!==e.seats?` · ${e.own} de Podemos`:""}</p>${e.seats==null?`<p>${esc(e.note)}</p>`:""}<a class="seat-source" href="#representacion=${encodeURIComponent(name)}">Ver serie y fuente ${icon("north-east")}</a></div>`;
+    const prior=e.seats==null&&name==="Congreso" ? series.get(name).entries.filter(r=>r.date<e.date&&r.seats!=null).at(-1) : null;
+    const lastCount=prior&&e.date!=="2026-10-06" ? ` Antes de la disolución, la última referencia era de ${prior.seats} escaños (${prior.list}).` : "";
+    return `<div class="seat-cell"><div class="seat-name">${esc(name)}</div><div class="seat-number">${esc(totalText(e))} ${e.seats!=null?`<small>de ${capacity} ${units}</small>`:""}${seatDiagram(e.seats,capacity)}</div><p><strong>${esc(e.list)}</strong>${e.own!=null&&e.own!==e.seats?` · ${e.own} de Podemos`:""}</p>${e.seats==null?`<p>${esc(e.note+lastCount)}</p>`:""}<a class="seat-source" href="#representacion=${encodeURIComponent(name)}">Ver serie y fuente ${icon("north-east")}</a></div>`;
   }
   function updateLocalCaption() {
     const date=events[index].date, s=series.get(localName), e=snapshot(localName,date);

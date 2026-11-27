@@ -35,6 +35,10 @@
         {
           "name": "Podemos · Memoria de 2014 e inscripción en el registro",
           "url": "https://transparencia.podemos.info/docs/2014-memoria-con-auditoria.pdf"
+        },
+        {
+          "name": "Universidad Carlos III de Madrid · cronología de la inscripción",
+          "url": "https://e-archivo.uc3m.es/rest/api/core/bitstreams/cdf0b0fc-8669-4327-acf9-4adf1214a14d/content"
         }
       ]
     },
@@ -57,6 +61,10 @@
         {
           "name": "Tribunal Supremo · nota de la Sala Civil",
           "url": "https://www.poderjudicial.es/stfls/TRIBUNAL%20SUPREMO/DOCUMENTOS%20DE%20INTER%C3%89S/Nota%20Sala%20de%20lo%20Civil%2017%20octubre%202017.pdf"
+        },
+        {
+          "name": "Europa Press · fallo del Supremo e indemnización",
+          "url": "https://www.europapress.es/sociedad/noticia-ts-confirma-alfonso-rojo-vulnero-derecho-honor-pablo-iglesias-reduce-indemnizacion-6000-euros-20171017123112.html"
         }
       ]
     },
@@ -849,6 +857,10 @@
         {
           "name": "Tribunal Supremo · sentencia completa",
           "url": "https://estaticos-cdn.prensaiberica.es/epi/public/content/file/original/2017/1017/11/la-sentencia-del-tribunal-supremo-0e0fc3f.pdf"
+        },
+        {
+          "name": "Europa Press · fallo del Supremo e indemnización",
+          "url": "https://www.europapress.es/sociedad/noticia-ts-confirma-alfonso-rojo-vulnero-derecho-honor-pablo-iglesias-reduce-indemnizacion-6000-euros-20171017123112.html"
         }
       ]
     },
@@ -914,6 +926,10 @@
         {
           "name": "Institut de Dret Públic · Elecciones de 2019, tablas 11 y 12",
           "url": "https://idpbarcelona.net/docs/public/iccaa/2019/elecciones_2019.pdf"
+        },
+        {
+          "name": "Congreso · Diario de Sesiones del 1 de junio de 2018",
+          "url": "https://www.congreso.es/eu/busqueda-de-publicaciones?_publicaciones_id_texto=DSCD-12-PL-127.CODI.&_publicaciones_legislatura=XII&_publicaciones_mode=mostrarTextoIntegro&p_p_id=publicaciones&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal"
         }
       ]
     },
