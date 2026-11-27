@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ee">
+  <title>Hagamos memoria · Archivo político de Podemos</title>
+  <meta name="description" content="Una cronología documentada de Podemos desde 2014. Recorre elecciones, medidas sociales, titulares y resoluciones judiciales y consulta las fuentes de cada hito.">
+  <meta property="og:title" content="Hagamos memoria · Archivo político de Podemos">
+  <meta property="og:description" content="Recorre la historia de Podemos, fecha a fecha, con sus documentos y fuentes.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:image" content="https://alejandrommingo.github.io/hagamos-memoria/media/marcha-del-cambio.webp">
+  <link rel="icon" href="icono.svg" type="image/svg+xml">
+  <link rel="preload" href="media/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="media/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="archivo.css">
+  <script src="archivo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#principal">Saltar al contenido</a>
+  <header class="masthead">
+    <div class="mast-inner wrap">
+      <a class="brand" href="#cronologia" aria-label="Hagamos memoria, portada"><span class="brandmark" aria-hidden="true"><i></i><i></i><i></i></span><span>Hagamos memoria</span></a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#cronologia" data-page="cronologia" aria-current="page">Cronología</a>
+        <a href="#representacion" data-page="representacion">Representación</a>
+        <a href="#fuentes" data-page="fuentes">Fuentes</a>
+      </nav>
+      <button class="search-trigger" id="openSearch" type="button" aria-label="Buscar en el archivo"><i data-icon="search"></i><span>Buscar</span><kbd>/</kbd></button>
+    </div>
+  </header>
+  <main id="principal">
+    <section id="chronoPage">
+      <div class="wrap hero">
+        <div class="hero-copy">
+          <div class="eyebrow hero-kicker"><span class="short-rule"></span> Archivo político de Podemos</div>
+          <h1>Hagamos<br><em>memoria.</em></h1>
+          <p>Las medidas que impulsó, la representación que consiguió y los titulares que marcaron su historia. Un recorrido por Podemos desde 2014.</p>
+          <a class="hero-action" href="#explorar">Explorar la cronología <i data-icon="arrow-down"></i></a>
+        </div>
+        <figure class="hero-photo">
+          <div class="photoframe"><img src="media/marcha-del-cambio.webp" width="1680" height="920" alt="Una multitud levanta las manos en la Puerta del Sol de Madrid durante la Marcha del Cambio."></div>
+          <figcaption><span><i data-icon="camera"></i> Marcha del Cambio, Madrid</span><a href="#fotografia" title="Ver crédito y licencia">31 ene 2015 <i data-icon="north-east"></i></a></figcaption>
+        </figure>
+      </div>
+      <section id="explorar" class="explore" aria-labelledby="timeTitle">
+        <div class="wrap">
+          <div class="section-top">
+            <div><div class="eyebrow"><span class="round-point"></span> 2014 — 2026</div><h2 id="timeTitle">Línea del tiempo</h2></div>
+            <div class="time-actions"><button class="index-trigger" id="indexButton" type="button"><i data-icon="list"></i> Índice de hitos</button><div class="arrow-pair"><button class="arrow-button" id="prev" type="button" aria-label="Hito anterior"><i data-icon="left"></i></button><button class="arrow-button" id="next" type="button" aria-label="Hito siguiente"><i data-icon="right"></i></button></div></div>
+          </div>
+          <div class="ruler-box" id="rulerBox">
+            <div class="ruler" id="ruler"><div id="rulerTicks" class="ruler-ticks" aria-hidden="true"></div><div class="ruler-base"></div><div class="ruler-progress" id="rulerProgress"></div>
+              <input type="range" id="timeRange" aria-label="Recorrer los hitos por fecha" min="0" max="100" step="0.01" value="0">
+              <div id="rulerKnob" class="ruler-knob" aria-hidden="true"></div></div>
+            <div class="year-buttons" id="yearButtons" aria-label="Saltar a un año"></div>
+          </div>
+          <div class="ruler-help"><span>Arrastra la barra o elige un año.</span><button type="button" id="lastEvent">Último hito <i data-icon="right"></i></button></div>
+          <div class="reading-layout">
+            <div class="main-lanes">
+              <div class="selection" id="selection"></div>
+              <div id="socialLane"></div>
+              <div id="seatsLane"></div>
+              <div id="pressLane"></div>
+            </div>
+            <aside class="year-aside" aria-label="Hitos del año seleccionado"><div class="aside-heading"><i data-icon="bookmark"></i><span>En este año</span></div><div class="aside-year"><span id="asideYear"></span><span id="yearCount"></span></div><div id="yearList"></div></aside>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id="repPage" class="secondary wrap" hidden></section>
+    <section id="sourcePage" class="secondary wrap" hidden></section>
+  </main>
+  <footer><div class="wrap foot-inner"><a href="#cronologia" class="footer-brand">Hagamos <em>memoria.</em></a><span>Archivo independiente · Edición del 28 nov 2026</span><a href="#fuentes">Fuentes y criterios <i data-icon="north-east"></i></a></div></footer>
+  <div class="follow-bar" id="followBar" hidden><div class="follow-inner"><span id="followText"></span><button id="followPrev" class="arrow-button" type="button" aria-label="Hito anterior"></button><button id="followNext" class="arrow-button" type="button" aria-label="Hito siguiente"></button></div></div>
+  <dialog id="panel" aria-labelledby="dialogTitle"><div id="dialogInner"></div></dialog>
+  <noscript><div class="no-js">Activa JavaScript para recorrer la cronología. Puedes consultar el <a href="archivo.json">archivo de datos y sus fuentes</a>.</div></noscript>
+</body>
+</html>
