@@ -30,7 +30,6 @@
       "title": "Podemos se inscribe como partido",
       "short": "El proyecto presentado en enero adquiere personalidad jurídica para concurrir a las elecciones.",
       "detail": "La memoria de 2014 del partido distingue la constitución del 26 de febrero y la aprobación de su inscripción en el registro el 11 de marzo.",
-      "attribution": "Fuente primaria de la organización.",
       "sources": [
         {
           "name": "Podemos · Memoria de 2014 e inscripción en el registro",
@@ -114,7 +113,6 @@
       "title": "La primera asamblea elige a Pablo Iglesias",
       "short": "Pablo Iglesias asume la primera secretaría general tras el proceso constituyente iniciado en Vistalegre.",
       "detail": "En octubre se debatió el modelo organizativo y en noviembre se proclamaron los resultados de las votaciones internas. La candidatura de Iglesias obtuvo la dirección del partido.",
-      "attribution": "Elección interna.",
       "sources": [
         {
           "name": "RTVE · Primera Asamblea Ciudadana",
@@ -165,7 +163,7 @@
       "date": "2015-03-22",
       "category": "representacion",
       "scope": "Autonómicas",
-      "title": "Andalucía abre la puerta de los parlamentos autonómicos",
+      "title": "Podemos entra en el Parlamento andaluz con 15 escaños",
       "short": "Podemos obtiene 15 de los 109 escaños andaluces en su primera convocatoria autonómica.",
       "detail": "La lista de Teresa Rodríguez entra como tercera fuerza, detrás de PSOE y PP. Recibe 592.133 votos en el escrutinio definitivo.",
       "attribution": "Lista propia de Podemos.",
@@ -296,9 +294,9 @@
       "category": "representacion",
       "scope": "Municipales",
       "title": "Carmena y Colau toman posesión de las alcaldías",
-      "short": "Las investiduras convierten los resultados municipales de mayo en capacidad de gobierno.",
+      "short": "Varias candidaturas municipalistas alcanzaron las alcaldías tras las elecciones de mayo.",
       "detail": "Manuela Carmena asumió la alcaldía de Madrid y Ada Colau la de Barcelona. Otras plataformas municipalistas alcanzaron las alcaldías de Zaragoza, Cádiz, A Coruña, Santiago y Ferrol. En València, la alcaldía recayó en Joan Ribó, de Compromís.",
-      "attribution": "Alcaldías de candidaturas locales con apoyos de varias fuerzas.",
+      "attribution": "Las alcaldías correspondían a candidaturas locales, no a Podemos en solitario.",
       "sources": [
         {
           "name": "RTVE · investiduras municipales del 13 de junio de 2015",
@@ -489,7 +487,7 @@
       "category": "historia",
       "scope": "Congreso",
       "title": "Se registra un grupo de 65 diputados",
-      "short": "Cuatro diputados de Compromís siguen una vía parlamentaria distinta de los demás electos de las confluencias.",
+      "short": "Cuatro diputados de Compromís se incorporaron al Grupo Mixto.",
       "detail": "Podemos, En Comú Podem y En Marea registraron un grupo conjunto. La misma elección había dado 69 diputados a las listas con participación de Podemos. La diferencia ilustra por qué el tamaño del grupo y el resultado electoral pueden divergir.",
       "attribution": "Formación de grupos tras el 20D.",
       "sources": [
@@ -511,7 +509,6 @@
       "title": "Fracasa la investidura tras el pacto PSOE–Ciudadanos",
       "short": "En segunda votación, Podemos y sus confluencias se oponen al acuerdo que proponía a Pedro Sánchez.",
       "detail": "El Congreso rechazó la candidatura. La falta de otra mayoría condujo a la disolución de las Cortes y a una repetición electoral en junio.",
-      "attribution": "Decisión parlamentaria.",
       "sources": [
         {
           "name": "RTVE · Segunda votación de investidura en 2016",
@@ -576,7 +573,7 @@
       "date": "2016-05-06",
       "category": "hemeroteca",
       "scope": "Hemeroteca",
-      "title": "La falsa cuenta de Iglesias en las Granadinas",
+      "title": "OKdiario publica la información sobre la supuesta cuenta de Iglesias en las Granadinas",
       "short": "OKdiario presentó como hecho un supuesto pago de 272.325 dólares del Gobierno venezolano a Pablo Iglesias.",
       "detail": "Faltaban 51 días para las generales del 26 de junio, convocadas tres días antes de la publicación. El titular atribuía el pago a Iglesias en una cuenta de Euro Pacific Bank. La defensa del diario llegaría a la Sala Civil del Supremo.",
       "attribution": "El banco negó la relación con Iglesias. En 2025 el Supremo concluyó que los artículos carecían de veracidad y vulneraban su honor.",
@@ -764,7 +761,7 @@
       "short": "La Eurocámara reclamó normas obligatorias para impedir que las cadenas textiles europeas se abastecieran mediante explotación laboral.",
       "detail": "La resolución instó a la Comisión Europea a proponer obligaciones para que las empresas identificaran y afrontaran abusos a lo largo de la cadena de producción. Reclamó condiciones de trabajo dignas y más información sobre el origen de las prendas.",
       "attribution": "La eurodiputada de Podemos Lola Sánchez Caldentey fue la ponente en la Comisión de Desarrollo. El pleno del Parlamento Europeo aprobó el informe.",
-      "benefit": "La propuesta daba visibilidad a los derechos de quienes cosen la ropa y a la información que llegaba a los consumidores. Una resolución de este tipo pide legislación y por sí sola no crea un derecho exigible.",
+      "benefit": "La resolución pedía futuras obligaciones empresariales y no creaba por sí misma derechos exigibles.",
       "status": "Resolución no vinculante",
       "sources": [
         {
@@ -992,10 +989,10 @@
       "category": "medidas",
       "scope": "Estado",
       "title": "El salario mínimo sube a 900 euros",
-      "short": "El pacto presupuestario de octubre se convirtió en un nuevo suelo salarial para 2019.",
+      "short": "El Gobierno fijó el salario mínimo de 2019 tras el acuerdo presupuestario de octubre de 2018.",
       "detail": "El Consejo de Ministros fijó el salario mínimo de 2019 en 900 euros brutos al mes en 14 pagas a jornada completa. El importe anual ascendió a 12.600 euros, un 22,3 % más que el año anterior.",
       "attribution": "El Gobierno del PSOE dictó el decreto tras pactar la cuantía con el grupo de Unidos Podemos. Podemos todavía estaba fuera del Ejecutivo.",
-      "benefit": "Quien trabajara a jornada completa y cobrara por debajo del nuevo mínimo anual pasaba a tener derecho a ese suelo. A tiempo parcial se aplicaba la proporción correspondiente.",
+      "benefit": "El mínimo para una jornada completa quedó en 12.600 euros brutos al año. Para el trabajo a tiempo parcial se aplicaba la parte proporcional.",
       "status": "Real decreto aprobado",
       "sources": [
         {
@@ -1051,7 +1048,7 @@
       "date": "2019-03-08",
       "category": "medidas",
       "scope": "Estado",
-      "title": "El subsidio para desempleados vuelve a los 52 años",
+      "title": "La edad mínima del subsidio de desempleo vuelve a los 52 años",
       "short": "La reforma rebajó de 55 a 52 años la edad mínima y mejoró la cotización para la jubilación.",
       "detail": "El decreto recuperó el acceso a partir de los 52 años para quienes cumplían los requisitos de rentas, cotización y desempleo. Permitió mantener el subsidio hasta alcanzar la edad ordinaria de jubilación si se seguían cumpliendo las condiciones.",
       "attribution": "El Gobierno socialista aplicó una medida que había pactado con Unidos Podemos en octubre de 2018.",
@@ -1104,7 +1101,7 @@
       "category": "representacion",
       "scope": "Generales",
       "title": "Las candidaturas de Unidas Podemos obtienen 42 escaños",
-      "short": "En las primeras generales de 2019 el espacio baja de 71 a 42 diputados.",
+      "short": "Unidas Podemos y sus confluencias obtienen 42 escaños, frente a los 71 de las candidaturas de 2016.",
       "detail": "El reparto agregado incluye Unidas Podemos, En Comú Podem en Cataluña y la coalición En Común–Unidas Podemos en Galicia. La jornada abrió una negociación de investidura que acabó sin acuerdo en julio.",
       "attribution": "Resultado agregado de las candidaturas asociadas.",
       "sources": [
@@ -1126,7 +1123,6 @@
       "title": "Unides Podem entra en las Corts con ocho escaños",
       "short": "La elección valenciana se adelanta y coincide con las generales de abril.",
       "detail": "Unides Podem-Esquerra Unida obtiene el 7,98 % de los votos. Con esos ocho escaños negoció con PSPV y Compromís el segundo pacto del Botànic.",
-      "attribution": "Resultado y negociación de la coalición valenciana.",
       "sources": [
         {
           "name": "Corts Valencianes · escrutinio de 2019",
@@ -1166,10 +1162,10 @@
       "date": "2019-05-26",
       "category": "representacion",
       "scope": "Autonómicas",
-      "title": "Las alianzas autonómicas afrontan el 26M",
+      "title": "Resultados autonómicos del 26 de mayo de 2019",
       "short": "Las listas vinculadas a Podemos obtienen siete escaños en Madrid, seis en Baleares y cinco en Aragón.",
       "detail": "Las doce comunidades del ciclo renuevan sus cámaras. En Canarias la lista suma cuatro diputados entre las circunscripciones insulares y la autonómica. En Cantabria y Castilla-La Mancha, las candidaturas quedaron fuera.",
-      "attribution": "En cada región se identifica la lista y los socios con los que concurrió.",
+      "attribution": "Las cifras corresponden a candidaturas de composición distinta según la comunidad.",
       "sources": [
         {
           "name": "RTVE · elecciones autonómicas y municipales de mayo de 2019",
@@ -1220,7 +1216,7 @@
       "date": "2019-05-26",
       "category": "representacion",
       "scope": "Municipales",
-      "title": "Los gobiernos municipalistas se juegan la reelección",
+      "title": "Resultados de las candidaturas municipalistas en 2019",
       "short": "Adelante Cádiz llega a 13 concejales y Barcelona en Comú obtiene 10.",
       "detail": "En Madrid, Podemos apoyó tanto a la lista de Carmena como a Madrid en Pie y careció de lista municipal propia. Las investiduras de junio confirmaron el relevo en Madrid, Zaragoza, Santiago, A Coruña y Ferrol. Cádiz y Barcelona mantuvieron sus alcaldesas o alcaldes.",
       "attribution": "Resultados e investiduras de plataformas locales.",
@@ -1280,7 +1276,6 @@
       "title": "La negociación de julio termina sin investidura",
       "short": "Unidas Podemos se abstiene después de que las negociaciones de coalición con el PSOE no alcancen un acuerdo.",
       "detail": "En la segunda votación, Sánchez reunió 124 votos a favor. La disolución de septiembre dio paso a las segundas generales del año.",
-      "attribution": "Votación y negociación entre los dos partidos.",
       "sources": [
         {
           "name": "Congreso · Diario de Sesiones, 25 de julio de 2019",
@@ -1470,7 +1465,6 @@
       "title": "La tercera asamblea reelige a Iglesias",
       "short": "La militancia ratifica al secretario general mientras el partido participa por primera vez en el Gobierno central.",
       "detail": "Iglesias compaginó la dirección política con la Vicepresidencia Segunda. Su candidatura obtuvo algo más del 92 % de los votos emitidos.",
-      "attribution": "Elección interna.",
       "sources": [
         {
           "name": "RTVE · Tercera Asamblea Ciudadana",
@@ -1535,7 +1529,7 @@
       "date": "2020-07-12",
       "category": "representacion",
       "scope": "Autonómicas",
-      "title": "Galicia en Común queda fuera y Elkarrekin mantiene seis",
+      "title": "Galicia en Común pierde su representación y Elkarrekin obtiene seis escaños",
       "short": "Las dos convocatorias registran un descenso frente a los resultados de 2016.",
       "detail": "En Galicia, la candidatura de Podemos, Esquerda Unida y Anova acabó sin diputados. En Euskadi, Elkarrekin Podemos-IU obtuvo seis, frente a los once que había logrado Elkarrekin Podemos cuatro años antes.",
       "attribution": "Resultados autonómicos de candidaturas con aliados diferentes.",
@@ -1631,9 +1625,8 @@
       "category": "historia",
       "scope": "Organización",
       "title": "Iglesias deja el Ejecutivo y Belarra asume Derechos Sociales",
-      "short": "El relevo de Iglesias para concurrir en Madrid modifica las responsabilidades del espacio de Unidas Podemos.",
+      "short": "Pablo Iglesias abandona el Gobierno para presentarse a las elecciones de Madrid.",
       "detail": "Ione Belarra pasó a dirigir el Ministerio de Derechos Sociales y Agenda 2030. Yolanda Díaz mantuvo Trabajo y asumió la Vicepresidencia Tercera.",
-      "attribution": "Reorganización del Gobierno de coalición.",
       "sources": [
         {
           "name": "BOE · Nombramiento de Ione Belarra en Derechos Sociales",
@@ -1675,7 +1668,6 @@
       "title": "Iglesias abandona la dirección y la política institucional",
       "short": "Tras las elecciones madrileñas, el fundador de Podemos anuncia que deja sus cargos y que no recogerá el acta de diputado autonómico.",
       "detail": "La salida abrió el relevo al frente de la organización estatal. La cuarta Asamblea Ciudadana elegiría a Ione Belarra en junio.",
-      "attribution": "Anuncio personal en la noche electoral.",
       "sources": [
         {
           "name": "Europa Press · Anuncio del 4 de mayo",
@@ -1770,7 +1762,6 @@
       "title": "Ione Belarra toma el relevo de Pablo Iglesias",
       "short": "La cuarta Asamblea Ciudadana elige a Belarra secretaria general del partido.",
       "detail": "Tras la salida de Iglesias de la dirección, las personas inscritas eligieron a la ministra de Derechos Sociales con el 88,7 % de los votos emitidos.",
-      "attribution": "Elección interna.",
       "sources": [
         {
           "name": "RTVE · Elección de Ione Belarra",
@@ -1853,7 +1844,7 @@
       "date": "2022-02-09",
       "category": "medidas",
       "scope": "Autonómicas",
-      "title": "Un colegio de Mallorca empieza a suministrar luz a sus vecinos",
+      "title": "Autoconsumo compartido en un colegio de Mallorca",
       "short": "El primer autoconsumo compartido del Govern balear llegó a 38 viviendas y tres negocios de Santa Eugènia.",
       "detail": "El Instituto Balear de la Energía instaló paneles en la escuela Mestre Guillemet con financiación del impuesto de turismo sostenible. El Ayuntamiento y la escuela también usaban la energía. Cuatro de las viviendas participantes estaban en situación de vulnerabilidad.",
       "attribution": "El Instituto dependía de la vicepresidencia de Juan Pedro Yllanes, independiente propuesto por Podemos dentro del Govern de coalición.",
@@ -2199,7 +2190,7 @@
       "date": "2023-05-28",
       "category": "representacion",
       "scope": "Autonómicas",
-      "title": "Podemos pierde representación en Madrid, València y Canarias",
+      "title": "Podemos pierde representación en Madrid, la Comunitat Valenciana y Canarias",
       "short": "Las candidaturas salen de tres cámaras donde habían tenido diputados en la legislatura anterior.",
       "detail": "En Madrid, Podemos-IU-AV se quedó en el 4,76 % y en las Corts Valencianes Unides Podem-EUPV en el 3,52 %. En Extremadura la coalición mantuvo cuatro escaños y en Navarra Contigo-Zurekin consiguió tres.",
       "attribution": "Resultados del 28M en doce comunidades. Cada alianza tiene su propia composición.",
@@ -2249,10 +2240,9 @@
       "date": "2023-05-28",
       "category": "representacion",
       "scope": "Municipales",
-      "title": "Las municipales dibujan resultados muy diferentes por ciudad",
+      "title": "Resultados municipales de 2023",
       "short": "Barcelona en Comú obtiene nueve concejales. Las listas de Podemos en Madrid, Zaragoza y Cádiz quedan sin representación.",
       "detail": "En Zaragoza, Zaragoza en Común sí logró dos escaños municipales con una papeleta distinta de Podemos-AV. En A Coruña, Marea Atlántica y la lista de Podemos, Esquerda Unida y Alianza Verde concurrieron separadas y ninguna obtuvo ediles.",
-      "attribution": "Resultados de candidaturas locales y coaliciones concretas.",
       "sources": [
         {
           "name": "RTVE / Ministerio del Interior · municipales de Barcelona",
@@ -2661,11 +2651,11 @@
       "date": "2025-01-22",
       "category": "medidas",
       "scope": "Estado",
-      "title": "El Congreso deja caer la prórroga del gravamen energético",
+      "title": "El Congreso rechaza prorrogar el gravamen energético",
       "short": "Un compromiso que Podemos había negociado para apoyar el paquete fiscal de 2024 se quedó sin respaldo parlamentario.",
       "detail": "En noviembre, el Gobierno se comprometió ante Podemos a buscar un impuesto a las grandes energéticas o prorrogar el gravamen temporal. Dictó el decreto de prórroga en diciembre. El Congreso lo derogó el 22 de enero.",
       "attribution": "Podemos negoció desde la oposición. El Consejo de Ministros aprobó el decreto y su continuidad requería la convalidación del Congreso.",
-      "benefit": "La prórroga buscaba que grandes operadores energéticos siguieran aportando ingresos públicos en 2025. La derogación impide presentar esa recaudación como un beneficio conseguido.",
+      "benefit": "La prórroga pretendía mantener la recaudación del gravamen en 2025, pero fue derogada por el Congreso.",
       "status": "Prórroga rechazada",
       "sources": [
         {
@@ -2686,7 +2676,6 @@
       "title": "La quinta asamblea reelige a Ione Belarra",
       "short": "La secretaria general inicia un segundo mandato en una etapa de competencia electoral con Sumar.",
       "detail": "La candidatura de Belarra, única que reunió los avales, recibió alrededor del 90 % de los votos emitidos.",
-      "attribution": "Elección interna.",
       "sources": [
         {
           "name": "RTVE · Quinta Asamblea Ciudadana",
@@ -2775,10 +2764,9 @@
       "date": "2026-03-15",
       "category": "representacion",
       "scope": "Autonómicas",
-      "title": "Podemos-Alianza Verde se queda sin procurador",
+      "title": "Podemos-Alianza Verde pierde su representación en Castilla y León",
       "short": "Las elecciones castellanas y leonesas dejan al partido fuera de las Cortes.",
       "detail": "Podemos-AV y En Común (IU, Sumar y Equo) concurrieron por separado. Ninguna de las dos listas consiguió representación. La candidatura de 2022, que sí incluía a IU, había obtenido un escaño.",
-      "attribution": "Resultados por candidatura en la elección del 15M.",
       "sources": [
         {
           "name": "Junta Electoral de Castilla y León · escrutinio definitivo del 15M",
@@ -2798,7 +2786,7 @@
       "date": "2026-04-14",
       "category": "medidas",
       "scope": "Estado",
-      "title": "Se aprueba la regularización extraordinaria de personas migrantes",
+      "title": "El Gobierno aprueba la regularización extraordinaria de personas migrantes",
       "short": "Tras el acuerdo de enero con Podemos, el Consejo de Ministros abrió una vía extraordinaria de residencia y trabajo.",
       "detail": "La iniciativa recogió una demanda de organizaciones migrantes y de una iniciativa legislativa popular. El procedimiento se dirigió a personas ya presentes en España antes de 2026 que cumplieran las condiciones. El Ministerio registró 1.174.978 solicitudes al cierre del plazo en junio. En noviembre continuaban los retrasos.",
       "attribution": "Organizaciones sociales promovieron la regularización. Podemos pactó su puesta en marcha con el PSOE desde la oposición. El Gobierno la aprobó por real decreto y el Ministerio de Inclusión gestionó el procedimiento.",
@@ -2921,11 +2909,11 @@
       "date": "2026-10-02",
       "category": "medidas",
       "scope": "Estado",
-      "title": "Los dos decretos de alquiler decaen pese al apoyo de Podemos",
+      "title": "El Congreso rechaza dos decretos sobre alquiler",
       "short": "El Congreso rechazó dos normas que ampliaban la protección residencial y la estabilidad de contratos de alquiler.",
       "detail": "Los decretos incluían, entre otras medidas, prórrogas y topes para determinados alquileres. El primero obtuvo 172 votos a favor y 178 en contra. El segundo, 166 a favor y 184 en contra. El BOE publicó las dos derogaciones.",
       "attribution": "Los decretos eran del Gobierno PSOE–Sumar. Ione Belarra anunció el apoyo de Podemos tras la petición de la Confederación de Sindicatos de Inquilinas. El grupo defendió su voto pese a considerar insuficientes las medidas.",
-      "benefit": "La derrota parlamentaria frustró la continuidad de las protecciones incluidas en esos dos decretos. Este episodio documenta un voto y su resultado.",
+      "benefit": "Las protecciones de esos dos decretos perdieron su vigencia tras la derogación.",
       "status": "Decretos derogados",
       "sources": [
         {
@@ -3032,9 +3020,8 @@
       "category": "representacion",
       "scope": "Generales",
       "title": "Último día de campaña antes del 29N",
-      "short": "La última fecha del archivo corresponde al cierre de la campaña de las generales del domingo 29 de noviembre.",
-      "detail": "El decreto fija las 24 horas del viernes 27 como final de la campaña. A esta fecha la votación aún no se ha celebrado y el calendario prevé la constitución de las nuevas cámaras el 23 de diciembre.",
-      "attribution": "Convocatoria pendiente de votación a la fecha de corte.",
+      "short": "La campaña de las elecciones generales del 29 de noviembre termina a medianoche del viernes 27.",
+      "detail": "El decreto de convocatoria prevé la constitución de las nuevas Cámaras el 23 de diciembre.",
       "sources": [
         {
           "name": "BOE · Disolución de las Cortes y convocatoria del 29N",
@@ -3051,10 +3038,9 @@
       "date": "2026-11-28",
       "category": "historia",
       "scope": "Generales",
-      "title": "Jornada de reflexión antes del 29-N",
-      "short": "Con la campaña concluida y las Cortes disueltas, queda pendiente la votación del domingo 29 de noviembre.",
-      "detail": "El real decreto de convocatoria fijó el final de la campaña a medianoche del viernes 27. El calendario del Ministerio del Interior señala el sábado 28 como jornada de reflexión.",
-      "attribution": "Esta edición cierra el 28 de noviembre de 2026. El último Congreso disuelto tuvo cuatro diputados de Podemos en el Grupo Mixto. El próximo reparto dependerá del escrutinio.",
+      "title": "Jornada de reflexión antes de las elecciones del 29N",
+      "short": "El sábado 28 es la jornada de reflexión previa a las elecciones generales.",
+      "detail": "La campaña terminó a medianoche del viernes 27. El resultado electoral todavía no se conoce.",
       "sources": [
         {
           "name": "BOE · convocatoria de las elecciones generales",
